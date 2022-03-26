@@ -14,4 +14,4 @@ workflows:
       - name: Install Addon
         script: pip install codemagic
       - name: Python Passed Running
-        script: setup.py
+        script: python setup.py
