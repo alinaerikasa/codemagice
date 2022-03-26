@@ -1,15 +1,25 @@
-# Automatically generated on 2022-03-26 UTC from https://codemagic.io/app/623edd8b971f5877f8b7a899/settings
+# Automatically generated on 2022-03-26 UTC from https://codemagic.io/app/623ebb29971f583d21e1d6ea/settings
 # Note that this configuration is not an exact match to UI settings. Review and adjust as necessary.
 
 workflows:
-  Devloper-Studio:
-    name: Devloper-Studio
+  setup-keras:
+    name: Setup-Studio
     instance_type: linux_x2
     max_build_duration: 120
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: master
+          include: true
+          source: true
+      tag_patterns:
+        - pattern: '*'
+          include: true
     scripts:
-      - name: Pip Upgrade
+      - name: Pip Install
         script: python -m pip install --upgrade pip
-      - name: Pip Installed
+      - name: Pip Installe
         script: pip install -r requirements.txt
       - name: Install Addon
         script: pip install codemagic
