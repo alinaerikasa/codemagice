@@ -1,15 +1,17 @@
-# Automatically generated on 2022-03-26 UTC from https://codemagic.io/app/623eb50766f74348241c0e91/settings
+# Automatically generated on 2022-03-26 UTC from https://codemagic.io/app/623edd8b971f5877f8b7a899/settings
 # Note that this configuration is not an exact match to UI settings. Review and adjust as necessary.
 
 workflows:
-  AndroisStudio:
-    name: AndroisStudio
+  Devloper-Studio:
+    name: Devloper-Studio
     instance_type: linux_x2
     max_build_duration: 120
     scripts:
-      - name: Downlaod PIP
-      - python -m pip install --upgrade pip
-      - name: Run Codemagic
-      - pip install codemagic
-      - name: Setup Pyhton
-      - python setup.py
+      - name: Pip Upgrade
+        script: python -m pip install --upgrade pip
+      - name: Pip Installed
+        script: pip install -r requirements.txt
+      - name: Install Addon
+        script: pip install codemagic
+      - name: Python Passed Running
+        script: setup.py
