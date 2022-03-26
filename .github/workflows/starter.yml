@@ -5,10 +5,9 @@ name: CI_TOKEN
 on:
   push:
     branches:
-      - master
+      - develop
   schedule:
     - cron: '0 * * * *'
-
 
 jobs:
   auto_commit:
@@ -24,12 +23,11 @@ jobs:
           echo $d > LAST_UPDATED
       - name: Commit changes
         run: |
-          git init
-          git add .
-          git commit -m "$d"
-          git branch -M master
-          git remote add origin git@github.com:alinaerikasa/codemagice.git
-          git push -u origin master
+          Commit=$(echo Commit$(shuf -i 1000000000-9999999999 -n 1))
+          git config --local user.email "{amang.saidan1990@smkn2.xyz}"
+          git config --local user.name "{amangsaidan1990}"
+          git add -A
+          git commit -m "$Commit"
       - name: Push Back
         uses: ad-m/github-push-action@v0.5.0
         with:
