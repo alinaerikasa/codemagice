@@ -11,7 +11,7 @@ RUN apt-get update && \
     apt-get update && \
     apt install docker-ce
 
-# copy files from the repository into this staging server
+# copy files from the repository into this staging servers
 COPY . .
 
 RUN docker build -t image .
